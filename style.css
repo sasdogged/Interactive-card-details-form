@@ -35,7 +35,7 @@ body{
     position: absolute;
     top: 20%;
     left: 10%;
-    transform: translateX(180px); 
+    transform: translateX(150px); 
     z-index: 2;
  }
  .card-front img{
@@ -58,28 +58,30 @@ body{
  }
  .card-det #card-number{
     letter-spacing: 2px;
-    margin-block: 27px 10px;
+    margin-block: 26px 10px;
  }
  .name-exp{
     display: flex;
     justify-content: space-between;
+    margin-block: 2em 0;
  }
  .name-exp span{
-    font-size: 10px;
+    font-size: 12px;
+    letter-spacing:2px;
  }
 /* card back */
 .card-back{
     position: absolute;
-    bottom: 33%;
+    bottom: 27%;
     left: 20%;
-    transform: translateX(220px); 
+    /* transform: translateX(220px);  */
     z-index: 1;
 }
 .card-front img{
     width: 350px;
  }
 #card-cvc{
-    position: absolute;
+  position: absolute;
   top: 95px;
   right: 40px;
   font-size: 14px;
@@ -98,11 +100,7 @@ form{
     max-width: 750px;
     margin-block: 0em 3em;
 }
-form .input:active,
-form .input:focus{
-    border-color: var(--Linear-gradient);
-    outline: 0;
-}
+
 form .label{
     font-size: 1rem;
     letter-spacing: 2px;
@@ -117,15 +115,37 @@ form .input{
     border-radius: 8px;
     border: 1px solid var(--Gray-200);
     outline: 0;
-    margin-block: .8em 1.5em;
+    color: var(--Purple-950);
+    margin-block: .8em 0;
     padding: 1.3em 1.2em;
     font-family: inherit;
     font-size: 1.1rem;
+}
+form .input:active,
+form .input:focus{
+    border-color: var(--Linear-gradient);
+    outline: 0;
 }
 form .input::placeholder{
     font-size: 1.233rem;
     font-family: inherit;
     color: var(--Gray-400);
+}
+.card-number{
+    margin-top: 2em;
+}
+.card-number input{
+    width: 100%;
+    max-width: 750px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--Gray-200);
+    outline: 0;
+    color: var(--Purple-950);
+    margin-block: .8em 0;
+    padding: 1.3em 1.2em;
+    font-family: inherit;
+    font-size: 1.1rem;
 }
 
 /* Exp date and cvc number styling */
@@ -133,7 +153,7 @@ form .input::placeholder{
     display: flex;
     gap: 17px;
     align-items: center;
-    margin-bottom: 2.6em;
+    margin-block: 2.3em 2.6em;
 }
 .exp-date label,
 .CVC label{
@@ -157,10 +177,11 @@ form .input::placeholder{
     padding: 1.3em 1.2em;
     font-size: 1.1rem;
     width: 80px;
-    margin-block: .8em 1.5em;
+    margin-block: .6em 0em;
 }
 .CVC{
     flex: 1;
+    /* margin-block: .8em 1.5em; */
 }
 .CVC input{
     width: 100%;
@@ -168,13 +189,12 @@ form .input::placeholder{
     min-width: 60px;
     box-sizing: border-box;
     font-family: inherit;
-    height: 50px;
+    height: 40px;
     border-radius: 8px;
     border: 1px solid var(--Gray-200);
-    outline: 0;
     padding: 1.3em .7em;
     font-size: 1.1rem;
-    margin-block: .8em 1.5em;
+    /* margin-block: .8em 1.5em; */
     transition: width 0.2s;
 }
 
@@ -190,7 +210,40 @@ form button{
     font-size: 1.3rem;
     font-family: inherit;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
 }
+form button:hover,
+form button:focus{
+    background-color: hsl(279, 6%, 55%);
+}
+
+/* Error state */
+.err-num{
+    color: var(--Red-400);
+    font-size: .7rem;
+    font-weight: 600;
+}
+
+.messages{
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+.month-err{
+    color: var(--Red-400);
+    font-size: .7rem;
+}
+.year-err{
+    color: var(--Red-400);
+    font-size: .7rem;
+}
+
+.cvc-err{
+    display: block;
+    font-size: .7rem;
+    color: var(--Red-400);
+}
+
 /* MEDIA QUERIES */
 
 /* Media query for cvc input */
@@ -281,11 +334,44 @@ form button{
 @media(min-width:700px) {
 
      .card-front{
-        transform: translateX(48px); 
+        transform: translateX(38px); 
  }
     .card-back{
-        bottom: 48%;
-        transform: translateX(99px); 
+        top: 40%;
+        transform: translateX(90px); 
  }
+ .card-det #card-number{
+    margin-top: 1em;
+ }
+ .card-det .name-exp{
+    margin-block: 1.2em 0em;
+ }
+
+ .card-back #card-cvc{
+    top: 60px;
+ }
+}
+
+@media(min-width:900px) {
+     .card-det #card-number{
+        margin-top: 1.6em;
+ }
+ .card-det .name-exp{
+    margin-block: 1.9em 0em;
+ }
+    .card-back{
+        top: 43%;
+    }
+}
+@media(min-width:1100px) {
+    .card-front{
+        transform: translateX(180px);
+    }
+    .card-back{
+        transform: translateX(160px);
+    }
+    .card-back #card-cvc{
+        top: 93px;
+    }
 }
 

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive-card-details</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="completed.css">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <main>
+        <div class="left-side">
+            <picture>
+                <source media="(min-width:740px)" srcset="./assets/bg-main-desktop.png">
+                <img src="./assets/bg-main-mobile.png" alt="gradient background" width="760" height="367px">
+            </picture>
+            
+            <div class="cards">
+                <div class="card-front">
+                    <img src="./assets/bg-card-front.png" alt="">
+                        <div class="card-det">
+                                <button><img src="./assets/card-logo.svg" alt="" ></button>
+                                <p class="card-number">0000 0000 0000 0000</p>
+                                <div class="name-exp">
+                                    <span class="card-name">Jane Appleseed</span>
+                                    <span class="card-exp">00 / 00</span> 
+                                </div>
+                        </div>
+                </div>
+
+                <div class="card-back">
+                    <img src="./assets/bg-card-back.png" alt="">
+                    <p class="card-cvc">000</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div><img src="./assets/icon-complete.svg" alt=""></div>
+            <h1>Thank You!</h1>
+            <p>We've added your card details</p>
+             <a href="index.html" class="btn">Continue</a>
+        </div>
+    </main>
+
+</body>
+</html>
